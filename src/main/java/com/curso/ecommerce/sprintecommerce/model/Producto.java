@@ -1,21 +1,30 @@
 package com.curso.ecommerce.sprintecommerce.model;
 
-public class Producto {
+import jakarta.persistence.*;
 
+@Entity
+@Table(name = "productos")
+public class Producto {
+    @Id
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
     private int id;
     private String nombre;
     private String descripcion;
     private double precio;
     private String imagen;
     private int cantidad;
+    @ManyToOne
+    private Usuario usuario;
     public Producto() {}
-    public Producto(int id, String nombre, String descripcion, double precio, int cantidad, String imagen) {
+
+    public Producto(int id, String nombre, String descripcion, double precio, String imagen, int cantidad, Usuario usuario) {
         this.id = id;
         this.nombre = nombre;
         this.descripcion = descripcion;
         this.precio = precio;
+        this.imagen = imagen;
         this.cantidad = cantidad;
-        this.imagen = "";
+        this.usuario = usuario;
     }
 
     public int getId() {
@@ -66,6 +75,14 @@ public class Producto {
         this.cantidad = cantidad;
     }
 
+    public Usuario getUsuario() {
+        return usuario;
+    }
+
+    public void setUsuario(Usuario usuario) {
+        this.usuario = usuario;
+    }
+
     @Override
     public String toString() {
         return "Producto{" +
@@ -75,6 +92,7 @@ public class Producto {
                 ", precio=" + precio +
                 ", imagen='" + imagen + '\'' +
                 ", cantidad=" + cantidad +
+                ", usuario=" + usuario +
                 '}';
     }
 }

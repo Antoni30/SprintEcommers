@@ -1,12 +1,23 @@
 package com.curso.ecommerce.sprintecommerce.model;
 
+import jakarta.persistence.*;
+
 import java.util.Date;
 
+@Entity
+@Table(name = "ordenes")
+
 public class Orden {
+    @Id
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
     private int idOrden;
     private String numero;
     private Date fechaCreacion;
     private Date fechaRecibida;
+    @ManyToOne
+    private Usuario usuario;
+    @OneToOne(mappedBy = "orden")
+    private DetalleOrden detalleOrden;
 
     public Orden(int idOrden) {}
 
@@ -15,6 +26,14 @@ public class Orden {
         this.numero = numero;
         this.fechaCreacion = fechaCreacion;
         this.fechaRecibida = fechaRecibida;
+    }
+
+    public Usuario getUsuario() {
+        return usuario;
+    }
+
+    public void setUsuario(Usuario usuario) {
+        this.usuario = usuario;
     }
 
     public int getIdOrden() {
@@ -49,6 +68,14 @@ public class Orden {
         this.fechaRecibida = fechaRecibida;
     }
 
+    public DetalleOrden getDetalleOrden() {
+        return detalleOrden;
+    }
+
+    public void setDetalleOrden(DetalleOrden detalleOrden) {
+        this.detalleOrden = detalleOrden;
+    }
+
     @Override
     public String toString() {
         return "Orden{" +
@@ -56,6 +83,8 @@ public class Orden {
                 ", numero='" + numero + '\'' +
                 ", fechaCreacion=" + fechaCreacion +
                 ", fechaRecibida=" + fechaRecibida +
+                ", usuario=" + usuario +
+                ", detalleOrden=" + detalleOrden +
                 '}';
     }
 }

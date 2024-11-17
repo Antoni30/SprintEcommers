@@ -1,11 +1,21 @@
 package com.curso.ecommerce.sprintecommerce.model;
 
+import jakarta.persistence.*;
+
+@Entity
+@Table(name = "detalles")
 public class DetalleOrden {
+    @Id
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
     private int idDetalleOrden;
     private String nombre;
     private double cantidad;
     private double precio;
     private double total;
+    @OneToOne
+    private Orden orden;
+    @ManyToOne
+    private Producto producto;
     public DetalleOrden() {}
 
     public DetalleOrden(int idDetalleOrden, String nombre, double cantidad, double precio, double total) {
@@ -14,6 +24,22 @@ public class DetalleOrden {
         this.cantidad = cantidad;
         this.precio = precio;
         this.total = total;
+    }
+
+    public Orden getOrden() {
+        return orden;
+    }
+
+    public void setOrden(Orden orden) {
+        this.orden = orden;
+    }
+
+    public Producto getProducto() {
+        return producto;
+    }
+
+    public void setProducto(Producto producto) {
+        this.producto = producto;
     }
 
     public int getIdDetalleOrden() {
@@ -64,6 +90,8 @@ public class DetalleOrden {
                 ", cantidad=" + cantidad +
                 ", precio=" + precio +
                 ", total=" + total +
+                ", orden=" + orden +
+                ", producto=" + producto +
                 '}';
     }
 }
