@@ -43,6 +43,17 @@ public class Usuario {
 
     public Usuario() {}
 
+    public Usuario(Integer idUsuario) {
+        this.idUsuario = idUsuario;
+        this.nombre = "";
+        this.username = "";
+        this.email = "";
+        this.direccion = "";
+        this.telefono = "";
+        this.tipo = "";
+        this.password = "";
+    }
+
     public Integer getIdUsuario() {
         return idUsuario;
     }
