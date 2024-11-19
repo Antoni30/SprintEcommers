@@ -11,23 +11,22 @@ import java.nio.file.Paths;
 
 @Service
 public class UploadFileService {
-    private String folder="image//";
+    private String folder="images//";
 
     public String saveImage(MultipartFile file) throws IOException {
-        if(!file.isEmpty()){
-            byte [] bytes = file.getBytes();
-            Path path = Paths.get(folder+file.getOriginalFilename());
+        if (!file.isEmpty()) {
+            byte [] bytes=file.getBytes();
+            Path path =Paths.get(folder+file.getOriginalFilename());
             Files.write(path, bytes);
             return file.getOriginalFilename();
         }
         return "default.jpg";
     }
 
-    public void deleteImage(String filename){
+    public void deleteImage(String nombre) {
         String ruta="images//";
-
-        File file= new File(ruta+filename);
+        File file= new File(ruta+nombre);
         file.delete();
-
     }
+
 }
