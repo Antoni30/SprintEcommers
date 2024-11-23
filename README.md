@@ -21,3 +21,6 @@ Inserta al menos un registro en la tabla *usuarios* utilizando el siguiente coma
 ```sql
 INSERT INTO usuarios (direccion,email ,nombre,password,telefono,tipo,username) values ("admin","admin","admin","adminadmin123","admin","admin","admin");
 ```
+
+## Paso 4: Correr el programa 
+## Paso 5: Ingresar a: http://localhost:8080/administrador
