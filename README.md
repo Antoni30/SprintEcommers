@@ -1,8 +1,8 @@
-# Crear una Base de Datos en MySQL
+# Iniciar el proyecto
 
 ## Paso 1: Crear la Base de Datos
 
-Crea una base de datos en MySQL utilizando el puerto **3066** con el nombre `ecommerce`. Puedes usar el siguiente comando:
+Crea una base de datos en MySQL utilizando el puerto **3306** con el nombre `ecommerce`. Puedes usar el siguiente comando:
 
 ```sql
 CREATE DATABASE ecommerce;
