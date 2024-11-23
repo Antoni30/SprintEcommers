@@ -6,3 +6,13 @@
 body {
   padding-top: 56px;
 }
+.horizontal-scroll {
+  display: flex;
+  flex-wrap: nowrap;
+  overflow-x: auto;
+  gap: 1rem; /* Espaciado entre elementos */
+}
+
+.horizontal-scroll .card {
+  flex: 0 0 auto; /* Evita el ajuste automático */
+}

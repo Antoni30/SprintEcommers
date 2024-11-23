@@ -14,18 +14,28 @@ public class Orden {
     private String numero;
     private Date fechaCreacion;
     private Date fechaRecibida;
+
+    private double total;
     @ManyToOne
     private Usuario usuario;
     @OneToOne(mappedBy = "orden")
     private DetalleOrden detalleOrden;
 
-    public Orden(int idOrden) {}
+    public Orden() {}
 
     public Orden(int idOrden, String numero, Date fechaCreacion, Date fechaRecibida) {
         this.idOrden = idOrden;
         this.numero = numero;
         this.fechaCreacion = fechaCreacion;
         this.fechaRecibida = fechaRecibida;
+    }
+
+    public double getTotal() {
+        return total;
+    }
+
+    public void setTotal(double total) {
+        this.total = total;
     }
 
     public Usuario getUsuario() {
