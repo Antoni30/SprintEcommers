@@ -5,6 +5,12 @@ Instalamos el IDE que se ultilizara
 Link: https://www.jetbrains.com/es-es/idea/download/?section=windows
 
 ## Paso 2: Abrir el proyecto usando el IDE
+* Descargar el proyecto .zip o realizar un git clone del mismo
+* Abrir el programa IntelliJ IDEA
+* Selecionar open
+* Abrir el proyecto desde la *Carpeta* del proyecto
+* Si se pide autorizacion, colocar que si a todo esto solo es porque quiere realizar la instalacion de paquetes
+* Si pide descargar JDK de java preferible hacerlo, asi ya dispoga de el
 
 ## Paso 3: Crear la Base de Datos
 
