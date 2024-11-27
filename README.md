@@ -1,5 +1,9 @@
 # Iniciar el proyecto
 
+## Paso 1: Instalacion de IntelliJ IDEA ultimate
+Instalamos el IDE que se ultilizara
+Link: https://www.jetbrains.com/es-es/idea/download/?section=windows
+
 ## Paso 1: Crear la Base de Datos
 
 Crea una base de datos en MySQL utilizando el puerto **3306** con el nombre `ecommerce`. Puedes usar el siguiente comando:
