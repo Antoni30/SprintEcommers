@@ -27,6 +27,16 @@ public class Producto {
         this.usuario = usuario;
     }
 
+    public Producto(String nombre, String descripcion, double precio, int cantidad) {
+        Usuario usuario = new Usuario();
+        this.id=1;
+        this.nombre = nombre;
+        this.descripcion = descripcion;
+        this.precio = precio;
+        this.cantidad = cantidad;
+        this.usuario = usuario;
+    }
+
     public Integer getId() {
         return id;
     }
